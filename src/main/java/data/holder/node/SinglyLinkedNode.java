@@ -1,4 +1,4 @@
-package data.structure.node;
+package data.holder.node;
 
 public class SinglyLinkedNode<T> extends LinkedNode<T> {
     SinglyLinkedNode<T> next;

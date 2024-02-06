@@ -1,6 +1,6 @@
 package data.structure.list;
 
-import data.structure.node.SinglyLinkedNode;
+import data.holder.node.SinglyLinkedNode;
 
 public class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedNode<T>> {
 
@@ -37,16 +37,22 @@ public class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedNode<T>> {
     }
 
     @Override
-    public void delete(int index) {
+    public T delete(int index) {
+        T data = null;
+
         int size = getSize();
 
         if (size == 1) {
+            data = getHead().getData();
+
             setHead(null);
             setTail(null);
         } else if (index == 0) {
             SinglyLinkedNode<T> temp = getHead();
 
             setHead(temp.getNext());
+
+            data = temp.getData();
         } else {
             int i = 1;
 
@@ -57,6 +63,8 @@ public class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedNode<T>> {
                 i ++;
             }
 
+            data = temp.getNext().getData();
+
             if (temp.getNext() == getTail()) {
                 setTail(temp);
             }
@@ -65,6 +73,8 @@ public class SinglyLinkedList<T> extends LinkedList<T, SinglyLinkedNode<T>> {
         }
 
         incrementSize(-1);
+
+        return data;
     }
 
     @Override

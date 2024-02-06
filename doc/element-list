@@ -1,2 +1,4 @@
+data.holder.node
 data.structure.list
-data.structure.node
+data.structure.queue
+data.structure.stack

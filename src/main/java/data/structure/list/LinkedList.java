@@ -1,6 +1,6 @@
 package data.structure.list;
 
-import data.structure.node.LinkedNode;
+import data.holder.node.LinkedNode;
 
 public abstract class LinkedList<T, LN extends LinkedNode<T>> implements List<T, LN> {
     private LN head;

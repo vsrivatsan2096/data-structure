@@ -1,4 +1,4 @@
-package data.structure.node;
+package data.holder.node;
 
 public abstract class LinkedNode<T> implements Node<T> {
     protected T data;

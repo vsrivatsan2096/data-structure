@@ -1,7 +1,7 @@
 package data.structure.list;
 
-import data.structure.node.DoublyLinkedNode;
-import data.structure.node.SinglyLinkedNode;
+import data.holder.node.DoublyLinkedNode;
+import data.holder.node.SinglyLinkedNode;
 
 public class DoublyLinkedList<T> extends LinkedList<T, DoublyLinkedNode<T>> {
     @Override
@@ -13,6 +13,11 @@ public class DoublyLinkedList<T> extends LinkedList<T, DoublyLinkedNode<T>> {
         if (size == 0) {
             setHead(node);
             setTail(node);
+        } else if(index == 0) {
+            node.setNext(getHead());
+            getHead().setPrev(node);
+
+            setHead(node);
         } else if (index >= size) {
             DoublyLinkedNode<T> temp = getTail();
 
@@ -41,17 +46,25 @@ public class DoublyLinkedList<T> extends LinkedList<T, DoublyLinkedNode<T>> {
     }
 
     @Override
-    public void delete(int index) {
+    public T delete(int index) {
+        T data = null;
+
         int size = getSize();
 
         if (size == 1) {
+            data = getHead().getData();
+
             setHead(null);
             setTail(null);
         } else if (index >= size) {
+            data = getTail().getData();
+
             setTail(getTail().getPrev());
 
             getTail().setNext(null);
         } else if (index == 0) {
+            data = getHead().getData();
+
             setHead((DoublyLinkedNode<T>) getHead().getNext());
 
             getHead().setPrev(null);
@@ -65,6 +78,8 @@ public class DoublyLinkedList<T> extends LinkedList<T, DoublyLinkedNode<T>> {
                 i ++;
             }
 
+            data = temp.getNext().getData();
+
             if (temp.getNext() == getTail()) {
                 setTail(temp);
             } else {
@@ -76,6 +91,8 @@ public class DoublyLinkedList<T> extends LinkedList<T, DoublyLinkedNode<T>> {
         }
 
         incrementSize(-1);
+
+        return data;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package data.structure.node;
+package data.holder.node;
 
 public class DoublyLinkedNode<T> extends SinglyLinkedNode<T> {
     private DoublyLinkedNode<T> prev;

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"data.structure.list"},{"l":"data.structure.node"}];updateSearchResults();

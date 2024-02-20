@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"data.holder.node"},{"l":"data.structure.list"},{"l":"data.structure.queue"},{"l":"data.structure.stack"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"data.holder.node"},{"l":"data.structure.list"},{"l":"data.structure.queue"},{"l":"data.structure.stack"},{"l":"data.structure.tree"}];updateSearchResults();

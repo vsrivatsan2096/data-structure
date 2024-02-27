@@ -8,7 +8,9 @@ import java.util.stream.Stream;
 
 abstract public class BinaryTree<T> {
 
-    protected List<T> inOrderTraversal(BinaryTreeNode<T> rootNode) {
+    protected BinaryTreeNode<T> rootNode;
+
+    private List<T> inOrderTraversal(BinaryTreeNode<T> rootNode) {
         if (rootNode == null) {
             return new ArrayList<>();
         }
@@ -22,7 +24,7 @@ abstract public class BinaryTree<T> {
         return Stream.of(left, root, right).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    protected List<T> preOrderTraversal(BinaryTreeNode<T> rootNode) {
+    private List<T> preOrderTraversal(BinaryTreeNode<T> rootNode) {
         if (rootNode == null) {
             return new ArrayList<>();
         }
@@ -36,7 +38,7 @@ abstract public class BinaryTree<T> {
         return Stream.of(root, left, right).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    protected List<T> postOrderTraversal(BinaryTreeNode<T> rootNode) {
+    private List<T> postOrderTraversal(BinaryTreeNode<T> rootNode) {
         if (rootNode == null) {
             return new ArrayList<>();
         }
@@ -49,4 +51,10 @@ abstract public class BinaryTree<T> {
 
         return Stream.of(left, right, root).flatMap(Collection::stream).collect(Collectors.toList());
     }
+
+    public List<T> inOrderTraversal() { return inOrderTraversal(rootNode); }
+
+    public List<T> preOrderTraversal() { return preOrderTraversal(rootNode); }
+
+    public List<T> postOrderTraversal() { return postOrderTraversal(rootNode); }
 }
